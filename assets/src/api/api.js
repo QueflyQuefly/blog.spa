@@ -1,9 +1,9 @@
 function fetchCollection(path) {
-    return fetch(ENV_API_ENDPOINT + path).then(resp => resp.json()).then(json => json['hydra:member']);
+    return fetch('/' + path).then(resp => resp.json()).then(json => json['hydra:member']);
 }
 
 export function findConferences() {
-    return fetchCollection('api/conferences');
+    return fetchCollection('api/post/last/10');
 }
 
 export function findComments(conference) {

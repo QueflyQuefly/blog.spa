@@ -73,11 +73,7 @@ Encore
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
 
-    .enablePreactPreset()/* 
-    .addPlugin(new HtmlWebpackPlugin({ template: 'assets/src/index.ejs', alwaysWriteToDisk: true })) */
-    .addPlugin(new webpack.DefinePlugin({
-        'ENV_API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT),
-    }))
+    .enablePreactPreset()
 ;
 
 module.exports = Encore.getWebpackConfig();
