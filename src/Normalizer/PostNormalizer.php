@@ -14,14 +14,14 @@ class PostNormalizer
         }
 
         $data = [
-            'id'             => $post->getId(),/* 
+            'id'             => $post->getId(),
             'user_fio'       => $post->getUser()->getFio(),
-            'date_time'      => $post->getDateTime(), */
+            'date_time'      => $post->getDateTime(),
             'title'          => $post->getTitle(),
-            'content'        => $post->getContent(),/* 
+            'content'        => $post->getContent(),
             'rating'         => $post->getRating(),
             'count_comments' => $post->getCountComments(),
-            'count_ratings'  => $post->getCountRatingPosts(), */
+            'count_ratings'  => $post->getCountPostRatings(),
         ];
 
         return $data;

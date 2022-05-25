@@ -6,6 +6,7 @@ const $ = require('jquery');
 
 require('bootstrap');
 
-import '/assets/styles/app.scss';
-
-import '/assets/src/app';
+import './src/app';
+import './src/api/api';
+import './src/pages/home';
+import './src/pages/post';

@@ -17,8 +17,8 @@ function Comment({comments}) {
                 <div className="shadow border rounded-3 p-3 mb-4">
                     <div className="comment-img mr-3">
                         {!comment.photoFilename ? '' : (
-                            <a href={ENV_API_ENDPOINT+'uploads/photos/'+comment.photoFilename} target="_blank">
-                                <img src={ENV_API_ENDPOINT+'uploads/photos/'+comment.photoFilename} />
+                            <a href={'/images/'+comment.photoFilename} target="_blank">
+                                <img src={'/images/'+comment.photoFilename} />
                             </a>
                         )}
                     </div>
@@ -31,17 +31,17 @@ function Comment({comments}) {
     );
 }
 
-export default function Conference({conferences, slug}) {
-    const conference = conferences.find(conference => conference.slug === slug);
+export default function Post({posts, id}) {
+    const post = posts.find(post => post.id === id);
     const [comments, setComments] = useState(null);
 
     useEffect(() => {
-        findComments(conference).then(comments => setComments(comments));
+        findComments(post).then(comments => setComments(comments));
     }, [slug]);
 
     return (
         <div className="p-3">
-            <h4>{conference.city} {conference.year}</h4>
+            <h4>{post.title} {post.content}</h4>
             <Comment comments={comments} />
         </div>
     );
