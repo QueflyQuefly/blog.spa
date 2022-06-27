@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="min-height: 100vh;">
+        <h1 style='margin: 2rem 0'>Наилучший источник информации по теме "Путешествия"</h1>
+
+        <div id='lastPosts'></div>
+        <div id='moreTalkedPosts'></div>
+    </div>
+
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+{% endblock %}

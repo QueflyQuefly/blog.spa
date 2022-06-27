@@ -57,6 +57,11 @@ class Post
         $this->countComments = $this->getCountComments();
     }
 
+    public function __toString()
+    {
+        return 'Post ' . $this->getId();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

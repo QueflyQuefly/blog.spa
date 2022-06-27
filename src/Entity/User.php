@@ -78,6 +78,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->mySubscriptions = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return 'User ' . $this->getId(). ' ' . $this->getUserIdentifier();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

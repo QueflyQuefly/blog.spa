@@ -48,6 +48,11 @@ class Comment
         $this->commentRatings = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return 'Comment ' . $this->getId();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

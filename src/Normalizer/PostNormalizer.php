@@ -15,7 +15,7 @@ class PostNormalizer
 
         $data = [
             'id'             => $post->getId(),
-            'user_fio'       => $post->getUser()->getFio(),
+            'author'         => $post->getUser()->getFio(),
             'date_time'      => $post->getDateTime(),
             'title'          => $post->getTitle(),
             'content'        => $post->getContent(),

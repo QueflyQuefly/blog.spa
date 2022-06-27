@@ -10,7 +10,6 @@
         <title>{% block title %}Blog SPA{% endblock %}</title>
         <link rel="icon" href="{{ asset('favicon.ico') }}">
 
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -20,7 +19,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('favicon.ico') }}" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                    Блог
+                    Блог о путешествиях
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -56,7 +55,7 @@
             </div>
         </nav>
         {% block body %}
-            <div id='app' class="container" style="height: 100vh;"></div>
+            <div id='app' class="container" style="height: 100vh;">Hello it is Base Template</div>
         {% endblock %}
         
         <div class="container">
@@ -68,9 +67,5 @@
                 <p class="text-center text-muted">&copy; 2022 Blog.spa by Vyacheslav, Inc</p>
             </footer>
         </div>
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </body>
 </html>
