@@ -33,7 +33,7 @@ class PostController extends AbstractController
         return new JsonResponse($lastPosts);
     }
 
-    #[Route('/moreTalked/{numberOfPosts<(?!0)\b[0-9]+>?10}', 'moreTalked')]
+    #[Route('/more_talked/{numberOfPosts<(?!0)\b[0-9]+>?3}', 'more_talked')]
     public function getMoreTalkedPostsInJson(int $numberOfPosts): Response
     {
         $moreTalkedPosts = $this->postService->getMoreTalkedPosts($numberOfPosts);

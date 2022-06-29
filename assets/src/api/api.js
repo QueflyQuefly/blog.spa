@@ -1,11 +1,55 @@
-function fetchCollection(path) {
-    return fetch('/' + path).then(resp => resp.json()).then(json => json['hydra:member']);
+"use strict";
+
+import {convertPostsToString, hash} from '../functions/functions';
+
+let urlForLastPosts       = 'api/post/last/';
+let urlForMoreTalkedPosts = '/api/post/more_talked/';
+
+function getPosts(url, amount, output) {
+    //let key = 'getPosts' + hash(url, amount);
+    let stringOfPosts;
+
+    /* if (localStorage.getItem(key) = null) {
+        output.innerHTML = localStorage.getItem(key);
+        alert( localStorage.getItem(key));
+    } else { */
+        fetch(url + amount).then(
+            (response) => {
+                response.text().then(
+                    (text) => {
+                        stringOfPosts = convertPostsToString(JSON.parse(text));
+                        output.innerHTML = stringOfPosts;
+                        //localStorage.setItem(key, stringOfPosts);
+                    }
+                );
+            }
+        )
+    /* } */
 }
 
-export function findLastPosts() {
-    return fetchCollection('api/post/last/10');
+export function getLastPosts(amount, output) {
+    getPosts(urlForLastPosts, amount, output);
 }
 
-export function findComments(post) {
-    return fetchCollection('api/comments?post='+post.id);
+export function getMoreTalkedPosts(amount, output) {
+    getPosts(urlForMoreTalkedPosts, amount, output);
 }
+
+/* function getPosts(url, amount) {
+    let request = new XMLHttpRequest();
+    let response;
+
+    request.open('GET', url + amount);
+    request.responseType = 'text';
+
+    let key = hash(url, amount);
+    
+    request.onload = function() {
+        let response      = JSON.parse(request.response);
+        let uncachedValue = convertPostsToString(response);
+
+        localStorage.setItem(key, uncachedValue);
+    };
+    
+    request.send();
+} */

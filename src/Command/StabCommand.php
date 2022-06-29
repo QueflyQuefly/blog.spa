@@ -63,13 +63,13 @@ class StabCommand extends Command
                 ->stabService
                 ->toStabDb($this->numberOfIterations);
             $section->overwrite(sprintf(
-                'Cycle with the number of iterations = %s completed in %s', 
+                'Cycle with the number of iterations = %s completed in %s seconds', 
                 $this->numberOfIterations, 
                 microtime(true) - $this->startTime
             ));
         } catch (\Exception $e) {
             $section->overwrite(sprintf(
-                'Cycle (%s) completed in %s with error, see below', 
+                'Cycle (%s) completed in %s sec. with error, see below', 
                 $this->numberOfIterations, 
                 microtime(true) - $this->startTime
             ));

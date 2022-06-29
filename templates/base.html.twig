@@ -17,7 +17,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ path('homepage') }}">
                     <img src="{{ asset('favicon.ico') }}" alt="" width="30" height="30" class="d-inline-block align-text-top">
                     Блог о путешествиях
                 </a>
@@ -27,29 +27,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+                            <a class="nav-link" aria-current="page" href="{{ path('admin') }}">Админка</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Api
+                                API
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ path('api_post_last') }}">Api Last 10 Posts</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="{{ path('api_post_last') }}">Последние 10 постов</a></li>
+                                <li><a class="dropdown-item" href="{{ path('api_post_more_talked') }}">Наиболее обсуждаемые посты</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Еще что-нибудь</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <a class="nav-link disabled">Войти</a>
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Поисковый запрос" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
                 </div>
             </div>
@@ -61,10 +58,10 @@
         <div class="container">
             <footer class="py-3 my-4">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                    <li class="nav-item"><a href="{{ path('homepage') }}" class="nav-link px-2 text-muted">На главную</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link disabled px-2 text-muted">О нас</a></li>
                 </ul>
-                <p class="text-center text-muted">&copy; 2022 Blog.spa by Vyacheslav, Inc</p>
+                <p class="text-center text-muted">&copy; 2022 Blog.spa</p>
             </footer>
         </div>
     </body>
