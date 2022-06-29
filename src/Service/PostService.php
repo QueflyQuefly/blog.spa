@@ -64,12 +64,6 @@ class PostService
         $this
             ->postRepository
             ->approve($post, $flush);
-
-        if ($flush) {
-            $this
-                ->userService
-                ->sendMailsToSubscribers($post);
-        }
     }
 
     /**

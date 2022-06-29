@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <div id='post'></div>
+
+    <h3 class="display-6" style='margin-top: 2rem;'>Комментарии</h3>
+
+    <div id='comments'></div>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+{% endblock %}

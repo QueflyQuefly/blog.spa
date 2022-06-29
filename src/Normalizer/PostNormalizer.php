@@ -32,7 +32,9 @@ class PostNormalizer
         $data = [];
 
         foreach ($posts as $post) {
-            $data[] = $this->normalize($post);
+            if ($post instanceof Post) {
+                $data[] = $this->normalize($post);
+            }
         }
 
         return $data;

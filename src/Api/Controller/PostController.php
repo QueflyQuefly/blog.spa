@@ -41,4 +41,16 @@ class PostController extends AbstractController
 
         return new JsonResponse($moreTalkedPosts);
     }
+
+    #[Route('/{postId<(?!0)\b[0-9]+>}', 'one')]
+    public function getPostByIdInJson(int $postId): Response
+    {
+        $post = $this->postService->getPostById($postId);
+        
+        if ($post !== null) {
+            $post = $this->postNormalizer->normalize($post);
+        }
+
+        return new JsonResponse($post);
+    }
 }

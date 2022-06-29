@@ -4,6 +4,7 @@ import {convertPostsToString, hash} from '../functions/functions';
 
 let urlForLastPosts       = 'api/post/last/';
 let urlForMoreTalkedPosts = '/api/post/more_talked/';
+let urlForPost            = '/api/post/';
 
 function getPosts(url, amount, output) {
     //let key = 'getPosts' + hash(url, amount);
@@ -33,6 +34,10 @@ export function getLastPosts(amount, output) {
 
 export function getMoreTalkedPosts(amount, output) {
     getPosts(urlForMoreTalkedPosts, amount, output);
+}
+
+export function getPost(postId, output) {
+    getPosts(urlForPost, postId, output);
 }
 
 /* function getPosts(url, amount) {

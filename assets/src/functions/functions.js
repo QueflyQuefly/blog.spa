@@ -1,5 +1,7 @@
 "use strict";
 
+let errorString = '<p style="text-align: center; font-size: 14pt; margin-top: 2vh;">Нет информации для отображения</p>';
+
 export function formatDate(timestamp) {
     let dateOfTimestamp     = new Date(timestamp * 1000);
     let intermediateArchive = [
@@ -17,12 +19,20 @@ export function convertPostsToString(posts) {
     let stringOfPosts = '';
 
     if (posts == undefined || isEmpty(posts)) {
-        return '<p style="text-align: center; font-size: 14pt; margin-top: 2vh;">Нет постов для отображения</p>';
+        return errorString;
+    }
+
+    if (! Array.isArray(posts)) {
+        return `<h1 class="display-6" style='margin: 2rem 0'>${posts.title}</h1>
+            <p><small>Рейтинг: ${posts.rating}, количество оценок: ${posts.count_ratings}, количество комментариев: ${posts.count_comments}</small></p>
+            <p>Автор: ${posts.author}</p>
+            <p><small class="text-muted">${formatDate(posts.date_time)}</small></p>
+            <p>${posts.content}</p>`
+        ;
     }
 
     for (let post of posts) {
-        stringOfPosts += `
-            <div class="card mb-3">
+        stringOfPosts += `<div class="card mb-3">
                 <div class="row g-0" style="margin: 1rem 0">
                     <div class="col-md-4">
                         <img  class="img-fluid rounded-start" alt="Картинка для поста">

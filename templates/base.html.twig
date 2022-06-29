@@ -15,7 +15,7 @@
         {% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ path('homepage') }}">
                     <img src="{{ asset('favicon.ico') }}" alt="" width="30" height="30" class="d-inline-block align-text-top">
@@ -36,6 +36,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ path('api_post_last') }}">Последние 10 постов</a></li>
                                 <li><a class="dropdown-item" href="{{ path('api_post_more_talked') }}">Наиболее обсуждаемые посты</a></li>
+                                <li><a class="dropdown-item" href="{{ path('api_post_one', {'postId': 3}) }}">Третий пост</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item disabled" href="#">Еще что-нибудь</a></li>
                             </ul>
