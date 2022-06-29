@@ -16,8 +16,8 @@ export function formatDate(timestamp) {
 export function convertPostsToString(posts) {
     let stringOfPosts = '';
 
-    if (posts == undefined || posts == '[]') {
-        return '<p style="tex-align: center;">Нет постов для отображения</p>';
+    if (posts == undefined || isEmpty(posts)) {
+        return '<p style="text-align: center; font-size: 14pt; margin-top: 2vh;">Нет постов для отображения</p>';
     }
 
     for (let post of posts) {
@@ -74,4 +74,12 @@ export function updateWithTimeout(someFunction, timeoutInSeconds) {
 
         return someValue;
     };
+}
+
+export function isEmpty(obj) {
+    for (let key in obj) {
+      return false;
+    }
+
+    return true;
 }

@@ -1,16 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <div class="container" style="min-height: 100vh;">
-        <h1 class="display-6" style='margin: 2rem 0'>Наилучший источник информации по теме "Путешествия"</h1>
+{% block container %}
+    <h1 class="display-6" style='margin: 2rem 0'>Наилучший источник информации по теме "Путешествия"</h1>
 
-        <div class="container">
-            <div id='lastPosts'></div>
-            <h3 class="display-6" style='margin-top: 2rem; text-align: center;'>Наиболее обсуждаемые посты</h3>
-            <div id='moreTalkedPosts'></div>
-        </div>
-    </div>
+    <div id='lastPosts'></div>
 
+    <h3 class="display-6" style='margin-top: 2rem; text-align: center;'>Наиболее обсуждаемые посты</h3>
+
+    <div id='moreTalkedPosts'></div>
 
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
