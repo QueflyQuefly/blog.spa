@@ -41,8 +41,7 @@ export function convertPostsToString(posts) {
                         <div class="card-body">
                             <h5 class="card-title">${post.title.slice(0, 120)}</h5>
                             <p class="card-text">${post.content.slice(0, 250) + '...'}</p>
-                            <p class="card-text"><small>${post.author}</small></p>
-                            <p class="card-text"><small class="text-muted">${formatDate(post.date_time)}</small></p>
+                            <p class="card-text"><small>${post.author} </small> <small class="text-muted"> ${formatDate(post.date_time)}</small></p>
                             <p class="card-text"><small>Рейтинг: ${post.rating}, оценок: ${post.count_ratings}, комментариев: ${post.count_comments}</small></p>
                             <a href="${'/post/' + post.id}" class="btn btn-primary">Перейти</a>
                         </div>
