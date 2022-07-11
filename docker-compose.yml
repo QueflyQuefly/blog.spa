@@ -5,7 +5,7 @@ services:
     database:
         image: mysql:8
         ports:
-            - "33061:3306"
+            - "33062:3306"
         environment:
             MYSQL_ROOT_USER: blogspa
             MYSQL_ROOT_PASSWORD: blogspa
